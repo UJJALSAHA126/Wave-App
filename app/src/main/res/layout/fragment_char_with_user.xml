@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EBEB"
+    tools:context=".fragments.chat.CharWithUserFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/receiverPhoto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/profile_icon2"
+        app:civ_border_color="@color/helperTextColor"
+        app:civ_border_width="1dp" />
+
+    <TextView
+        android:id="@+id/receiverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/receiverPhoto"
+        android:layout_alignBottom="@id/receiverPhoto"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/receiverPhoto"
+        android:fontFamily="@font/spartan_bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textIsSelectable="true"
+        android:textSize="24sp"
+        tools:text="Goru" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLl"
+        android:layout_below="@id/receiverPhoto"
+        android:layout_marginTop="10dp"
+        tools:itemCount="30"
+        tools:listitem="@layout/chat_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
+
+        <ImageView
+            android:id="@+id/sendButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:rotation="0"
+            android:src="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="#86F8F8"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintEnd_toStartOf="@id/sendButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/sendMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/msg_box_hint"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#A19595"
+                android:textSize="20sp" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_5"
+    tools:context=".fragments.settings.SettingsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Change Login Details"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/texLay1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/texLay2"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/white"
+        android:theme="@style/TextInputLayoutStyle"
+        app:boxStrokeColor="@color/purple_500"
+        app:endIconMode="custom"
+        app:endIconTint="#00FF00"
+        app:endIconTintMode="src_atop"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/helperTextColor"
+        app:startIconDrawable="@drawable/ic_baseline_email"
+        app:startIconTint="@color/purple_500">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userEmailSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/texLay2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/new_password"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/purple_500"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:endIconMode="password_toggle"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/helperTextColor"
+        app:startIconDrawable="@drawable/ic_baseline_password"
+        app:startIconTint="@color/purple_500">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userPasswordSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/texLay3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/texLay2"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:hint="@string/confirm_password"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/purple_500"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:endIconMode="password_toggle"
+        app:helperText="Same As Password"
+        app:helperTextTextColor="@color/helperTextColor"
+        app:startIconDrawable="@drawable/ic_baseline_password"
+        app:startIconTint="@color/purple_500">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/updateLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/texLay3"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="#C309E4"
+        android:padding="10dp"
+        android:text="@string/update"
+        android:textSize="20sp"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/verifyBtnSettings"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/texLay1"
+        android:layout_alignEnd="@id/texLay1"
+        android:padding="0dp"
+        android:text="@string/verify"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:strokeColor="#6200EE"
+        app:strokeWidth="2dp"
+        tools:ignore="SmallSp" />
+
+</RelativeLayout>

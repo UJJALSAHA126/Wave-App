@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:layout_gravity="center"
+    android:background="@drawable/custom_dpdialog_shape"
+    android:padding="2dp">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/dialogDP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/dialogName"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_log_out" />
+
+    <TextView
+        android:id="@+id/dialogName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:text="Goru" />
+
+</RelativeLayout>

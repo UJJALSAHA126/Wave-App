@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph"
+    app:startDestination="@id/chatFragment">
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.wave.fragments.chat.ChatFragment"
+        android:label="Chat Home"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_charWithUserFragment"
+            app:destination="@id/charWithUserFragment"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/hide_center"
+            app:popEnterAnim="@anim/arrive_center"
+            app:popExitAnim="@anim/slide_to_rignt" />
+    </fragment>
+    <fragment
+        android:id="@+id/charWithUserFragment"
+        android:name="com.example.wave.fragments.chat.CharWithUserFragment"
+        android:label="Private Chat"
+        tools:layout="@layout/fragment_char_with_user">
+        <argument
+            android:name="connectionDetails"
+            app:argType="com.example.wave.fragments.chat.model.ChatDetails" />
+    </fragment>
+</navigation>
